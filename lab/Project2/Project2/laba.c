@@ -22,16 +22,39 @@ int main() {
 			}
 		}
 		if (v == 4) {
+                  if (size > 0) {
 			sort_str(my_array, size);
+                  show(my_array, size);
+                  }
+                    
+	else {
+		printf("%s", "Structure array is empty");
+	}
+                  
+                              
 		}
 		if (v == 5) {
+			       if (size > 0) {
 			sort_name(my_array, size);
+                  show(my_array, size);
+                    
+                               }
+	else {
+		printf("%s", "Structure array is empty");
+	}
 		}
 		if (v == 6) {
-			sort_author(my_array, size);
+			        if (size > 0) {
+			sort_str(my_array, size);
+                  show(my_array, size);
+                                }
+	else {
+		printf("%s", "Structure array is empty");
+	}
 		}
 	}
 	free_array(my_array, size);
 	return 0;
 }
+
 

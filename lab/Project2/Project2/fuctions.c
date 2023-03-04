@@ -4,7 +4,7 @@ int checkinput(int min, int max) {
 	int a;
 	printf("%s%d%s%d%s", "Enter an integer number that belongs to the interval [", min, " : ", max, "]\n");
 	while (scanf_s("%d", &a) != 1 || getchar() != '\n' || a < min || a > max) {
-		printf("%s");
+		printf("wrong input");
 		rewind(stdin);
 	}
 	return a;
@@ -65,10 +65,10 @@ int menu() {
 	return (checkinput(0, 6));
 }
 void sort_name(Book* my_array, int size) {
-	if (size > 0) {
-		int i, j;
-		for (i = 0; i < size - 1; i++) {
-			for (j = i + 1; j < size; j++) {
+	
+		
+		for (int i = 0; i < size - 1; i++) {
+			for (int j = i + 1; j < size; j++) {
 				if (strcmp(my_array[i].name, my_array[j].name) > 0) {
 					char* dp = my_array[i].name;
 					my_array[i].name = my_array[j].name;
@@ -84,17 +84,14 @@ void sort_name(Book* my_array, int size) {
 				}
 			}
 		}
-		show(my_array, size);
-	}
-	else {
-		printf("%s", "Structure array is empty");
-	}
+		
+	
+	
 }
 void sort_author(Book* my_array, int size) {
-	if (size > 0) {
-		int i, j;
-		for (i = 0; i < size - 1; i++) {
-			for (j = i + 1; j < size; j++) {
+	
+		for (int i = 0; i < size - 1; i++) {
+			for (int j = i + 1; j < size; j++){
 				if (strcmp(my_array[i].author, my_array[j].author) > 0) {
 					char* dp = my_array[i].name;
 					my_array[i].name = my_array[j].name;
@@ -110,14 +107,12 @@ void sort_author(Book* my_array, int size) {
 				}
 			}
 		}
-		show(my_array, size);
-	}
-	else {
-		printf("%s", "Structure array is empty");
-	}
+		
+	
+
 }
 void sort_str(Book* my_array, int size) {
-	if (size > 0) {
+	
 		for (int i = 0; i < size; i++) {
 			int p = i;
 			while (p > 0 && my_array[p].kol_str > my_array[p - 1].kol_str) {
@@ -135,11 +130,8 @@ void sort_str(Book* my_array, int size) {
 				p--;
 			}
 		}
-		show(my_array, size);
-	}
-	else {
-		printf("%s", "Structure array is empty");
-	}
+	
+	
 }
 void free_array(Book* students, int size) {
 	for (int i = 0; i < size; i++) {
