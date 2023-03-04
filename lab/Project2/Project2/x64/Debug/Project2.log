@@ -1,9 +1,10 @@
-﻿  fuctions.c
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(534,5): warning MSB8028: промежуточный каталог (x64\Debug\) содержит файлы, которые используются совместно с другим проектом (Project2.vcxproj).  Это может привести к ошибкам очистки и перестроения.
+  fuctions.c
 C:\Users\layma\Desktop\oaip\2 sem\Project2\Project2\fuctions.c(7,12): warning C4473: "printf_s": передано недостаточно аргументов для строки формата
 C:\Users\layma\Desktop\oaip\2 sem\Project2\Project2\fuctions.c(7,12): message : заполнители и их параметры ожидают переменное число аргументов в количестве 1, но было предоставлено 0
 C:\Users\layma\Desktop\oaip\2 sem\Project2\Project2\fuctions.c(7,12): message : отсутствующий вариативный аргумент "1" требуется для строки форматирования "%s"
   laba.c
-C:\Users\layma\Desktop\oaip\2 sem\Project2\Project2\laba.c(3,2): warning C4013: SetConsoleCP: нет определения; предполагается "extern" с возвратом типа "int"
-C:\Users\layma\Desktop\oaip\2 sem\Project2\Project2\laba.c(4,2): warning C4013: SetConsoleOutputCP: нет определения; предполагается "extern" с возвратом типа "int"
+C:\Users\layma\Desktop\oaip\2 sem\Project2\Project2\laba.c(4,2): warning C4013: SetConsoleCP: нет определения; предполагается "extern" с возвратом типа "int"
+C:\Users\layma\Desktop\oaip\2 sem\Project2\Project2\laba.c(5,2): warning C4013: SetConsoleOutputCP: нет определения; предполагается "extern" с возвратом типа "int"
   Создание кода...
-  Project2.vcxproj -> C:\Users\layma\Desktop\oaip\2 sem\Project2\x64\Debug\Project2.exe
+  Project2.vcxproj -> C:\Users\layma\Desktop\oaip\2 sem\Project2\x64\Debug\laba1.exe

@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <malloc.h>
 #include <string.h>
+
 typedef struct {
 	char* name;
 	char* author;

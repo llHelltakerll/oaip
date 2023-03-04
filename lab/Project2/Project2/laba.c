@@ -1,7 +1,6 @@
 #include "Header.h"
+
 int main() {
-	SetConsoleCP(1251);
-	SetConsoleOutputCP(1251);
 	int size = 0;
 	Book* my_array = NULL;
 	while (1) {
@@ -15,11 +14,11 @@ int main() {
 		}
 		if (v == 3) {
 			if (size > 0) {
-				printf_s("%s", "Введите номер элемента, который вы хотите перезаписать\n");
+				printf("%s", "Enter the number of the item you want to overwrite\n");
 				add_one(my_array, checkinput(1, size) - 1);
 			}
 			else {
-				printf_s("%s", "Массив структур пуст\n");
+				printf("%s", "Structure array is empty\n");
 			}
 		}
 		if (v == 4) {

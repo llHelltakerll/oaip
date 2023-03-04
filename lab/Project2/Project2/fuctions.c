@@ -2,9 +2,9 @@
 
 int checkinput(int min, int max) {
 	int a;
-	printf_s("%s%d%s%d%s", "Введите целое чисоо принадлежащее промежутку [", min, " : ", max, "]\n");
+	printf("%s%d%s%d%s", "Enter an integer number that belongs to the interval [", min, " : ", max, "]\n");
 	while (scanf_s("%d", &a) != 1 || getchar() != '\n' || a < min || a > max) {
-		printf_s("%s");
+		printf("%s");
 		rewind(stdin);
 	}
 	return a;
@@ -12,39 +12,39 @@ int checkinput(int min, int max) {
 void add_one(Book* my_array, int number) {
 	my_array[number].author = (char*)malloc(sizeof(char) * 100);
 	my_array[number].name = (char*)malloc(sizeof(char) * 100);
-	printf_s("%s", "Введите название книги\n");
+	printf("%s", "Enter book title\n");
 	fgets(my_array[number].name, 100, stdin);
 	my_array[number].name[strlen(my_array[number].name)] = '\0';
 	rewind(stdin);
-	printf_s("%s", "Введите название автора\n");
+	printf("%s", "Enter author name\n");
 	fgets(my_array[number].author, 100, stdin);
 	my_array[number].author[strlen(my_array[number].author)] = '\0';
 	rewind(stdin);
-	printf_s("%s", "Введите колличество страниц в книге\n");
+	printf("%s", "Enter the number of pages in the book\n");
 	my_array[number].kol_str = checkinput(1, 5000);
 	rewind(stdin);
 }
 void show(Book* my_array, int size) {
 	if (size > 0) {
 		for (int i = 0; i < size; i++) {
-			printf_s("%d%s", i + 1, ") ");
-			printf_s("%s", "Название книги: ");
+			printf("%d%s", i + 1, ") ");
+			printf("%s", "Book title: ");
 			for (int j = 0; j < strlen(my_array[i].name); j++) {
-				printf_s("%c", my_array[i].name[j]);
+				printf("%c", my_array[i].name[j]);
 			}
-			printf_s("%s", "Автор книги: ");
+			printf("%s", "book author: ");
 			for (int j = 0; my_array[i].author[j] != '\0'; j++) {
-				printf_s("%c", my_array[i].author[j]);
+				printf("%c", my_array[i].author[j]);
 			}
-			printf_s("%s%d%c", "Колличество страниц в книге: ", my_array[i].kol_str, '\n');
+			printf("%s%d%c", "Number of pages in a book: ", my_array[i].kol_str, '\n');
 		}
 	}
 	else {
-		printf_s("%s", "Массив структур пуст\n");
+		printf("%s", "Structure array is empty\n");
 	}
 }
 Book* take_struct(int* kol) {
-	printf("Введите количество книг: ");
+	printf("Enter number of books: ");
 	rewind(stdin);
 	int ans = checkinput(1, 100);
 	*kol = ans;
@@ -55,13 +55,13 @@ Book* take_struct(int* kol) {
 	return my_array;
 }
 int menu() {
-	printf_s("%s", "Введите 0, что бы завершить работу\n");
-	printf_s("%s", "Введите 1, что бы инециализировать новый массив структур\n");
-	printf_s("%s", "Введите 2, что бы вывести массив структур\n");
-	printf_s("%s", "Введите 3, что бы инециализировать новый n-й элемент структуры\n");
-	printf_s("%s", "Введите 4, что бы отсортироваить массив структур по убыванию страниц\n");
-	printf_s("%s", "Введите 5, что бы отсортировать массив структу по названию книг\n");
-	printf_s("%s", "Введите 6, что бы отсортировать массив структу по автору\n");
+	printf("%s", "Enter 0 to exit\n");
+	printf("%s", "Enter 1 to initialize a new structure array\n");
+	printf("%s", "Enter 2 to display an array of structures\n");
+	printf("%s", "Enter 3 to initialize the new nth element of the structure\n");
+	printf("%s", "Type 4 to sort the array of structures in descending page order.\n");
+	printf("%s", "Enter 5 to sort the array struct by book title\n");
+	printf("%s", "Enter 6 to sort the array struct by author\n");
 	return (checkinput(0, 6));
 }
 void sort_name(Book* my_array, int size) {
@@ -87,7 +87,7 @@ void sort_name(Book* my_array, int size) {
 		show(my_array, size);
 	}
 	else {
-		printf_s("%s", "Массив структур пуст");
+		printf("%s", "Structure array is empty");
 	}
 }
 void sort_author(Book* my_array, int size) {
@@ -113,7 +113,7 @@ void sort_author(Book* my_array, int size) {
 		show(my_array, size);
 	}
 	else {
-		printf_s("%s", "Массив структур пуст");
+		printf("%s", "Structure array is empty");
 	}
 }
 void sort_str(Book* my_array, int size) {
@@ -138,7 +138,7 @@ void sort_str(Book* my_array, int size) {
 		show(my_array, size);
 	}
 	else {
-		printf_s("%s", "Массив структур пуст");
+		printf("%s", "Structure array is empty");
 	}
 }
 void free_array(Book* students, int size) {
