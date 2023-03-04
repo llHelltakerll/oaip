@@ -6,19 +6,27 @@
 #include <string.h>
 
 typedef struct {
-	char* name;
-	char* author;
-	int kol_str;
+    char *name;
+    char *author;
+    int kol_str;
 
 } Book;
 
 int checkinput(int, int);
-void add_one(Book*, int);
-void show(Book*, int ze);
-Book* take_struct(int*);
+
+void add_one(Book *, int);
+
+void show(Book *, int ze);
+
+Book *take_struct(int *);
+
 void menu();
-void sort_name(Book*, int);
-void sort_author(Book*, int);
-void sort_str(Book*, int);
-void free_array(Book*, int);
+
+void sort_name(Book *, int);
+
+void sort_author(Book *, int);
+
+void sort_str(Book *, int);
+
+void free_array(Book *, int);
 

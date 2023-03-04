@@ -62,7 +62,7 @@ void menu() {
 	printf("%s", "Type 4 to sort the array of structures in descending page order.\n");
 	printf("%s", "Enter 5 to sort the array struct by book title\n");
 	printf("%s", "Enter 6 to sort the array struct by author\n");
-	 checkinput(0, 6));
+
 }
 void sort_name(Book* my_array, int size) {
 	
