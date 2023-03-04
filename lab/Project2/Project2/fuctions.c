@@ -54,7 +54,7 @@ Book* take_struct(int* kol) {
 	}
 	return my_array;
 }
-int menu() {
+void menu() {
 	printf("%s", "Enter 0 to exit\n");
 	printf("%s", "Enter 1 to initialize a new structure array\n");
 	printf("%s", "Enter 2 to display an array of structures\n");
@@ -62,7 +62,7 @@ int menu() {
 	printf("%s", "Type 4 to sort the array of structures in descending page order.\n");
 	printf("%s", "Enter 5 to sort the array struct by book title\n");
 	printf("%s", "Enter 6 to sort the array struct by author\n");
-	return (checkinput(0, 6));
+	 checkinput(0, 6));
 }
 void sort_name(Book* my_array, int size) {
 	
