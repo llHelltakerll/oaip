@@ -24,7 +24,7 @@ void add_one(Book* my_array, int number) {
 	my_array[number].kol_str = checkinput(1, 5000);
 	rewind(stdin);
 }
-void show(Book* my_array, int size) {
+void show(const Book* my_array, int size) {
 	if (size > 0) {
 		for (int i = 0; i < size; i++) {
 			printf("%d%s", i + 1, ") ");
