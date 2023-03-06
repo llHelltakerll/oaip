@@ -14,11 +14,11 @@ void add_one(Book* my_array, int number) {
 	my_array[number].name = (char*)malloc(sizeof(char) * 100);
 	printf("%s", "Enter book title\n");
 	fgets(my_array[number].name, 100, stdin);
-	my_array[number].name[strlen(my_array[number].name)] = '\0';
+	my_array[number].name[sizeof(my_array[number].name)] = '\0';
 	rewind(stdin);
 	printf("%s", "Enter author name\n");
 	fgets(my_array[number].author, 100, stdin);
-	my_array[number].author[strlen(my_array[number].author)] = '\0';
+	my_array[number].author[sizeof(my_array[number].author)] = '\0';
 	rewind(stdin);
 	printf("%s", "Enter the number of pages in the book\n");
 	my_array[number].kol_str = checkinput(1, 5000);
@@ -29,7 +29,7 @@ void show(const Book* my_array, int size) {
 		for (int i = 0; i < size; i++) {
 			printf("%d%s", i + 1, ") ");
 			printf("%s", "Book title: ");
-			for (int j = 0; j < strlen(my_array[i].name); j++) {
+			for (int j = 0; j < sizeof(my_array[i].name); j++) {
 				printf("%c", my_array[i].name[j]);
 			}
 			printf("%s", "book author: ");
@@ -65,73 +65,73 @@ void menu() {
 
 }
 void sort_name(Book* my_array, int size) {
-	
-		
-		for (int i = 0; i < size - 1; i++) {
-			for (int j = i + 1; j < size; j++) {
-				if (strcmp(my_array[i].name, my_array[j].name) > 0) {
-					char* dp = my_array[i].name;
-					my_array[i].name = my_array[j].name;
-					my_array[j].name = dp;
 
-					dp = my_array[i].author;
-					my_array[i].author = my_array[j].author;
-					my_array[j].author = dp;
 
-					int dp1 = my_array[i].kol_str;
-					my_array[i].kol_str = my_array[j].kol_str;
-					my_array[j].kol_str = dp1;
-				}
+	for (int i = 0; i < size - 1; i++) {
+		for (int j = i + 1; j < size; j++) {
+			if (strcmp(my_array[i].name, my_array[j].name) > 0) {
+				char* dp = my_array[i].name;
+				my_array[i].name = my_array[j].name;
+				my_array[j].name = dp;
+
+				dp = my_array[i].author;
+				my_array[i].author = my_array[j].author;
+				my_array[j].author = dp;
+
+				int dp1 = my_array[i].kol_str;
+				my_array[i].kol_str = my_array[j].kol_str;
+				my_array[j].kol_str = dp1;
 			}
 		}
-		
-	
-	
+	}
+
+
+
 }
 void sort_author(Book* my_array, int size) {
-	
-		for (int i = 0; i < size - 1; i++) {
-			for (int j = i + 1; j < size; j++){
-				if (strcmp(my_array[i].author, my_array[j].author) > 0) {
-					char* dp = my_array[i].name;
-					my_array[i].name = my_array[j].name;
-					my_array[j].name = dp;
 
-					dp = my_array[i].author;
-					my_array[i].author = my_array[j].author;
-					my_array[j].author = dp;
+	for (int i = 0; i < size - 1; i++) {
+		for (int j = i + 1; j < size; j++) {
+			if (strcmp(my_array[i].author, my_array[j].author) > 0) {
+				char* dp = my_array[i].name;
+				my_array[i].name = my_array[j].name;
+				my_array[j].name = dp;
 
-					int dp1 = my_array[i].kol_str;
-					my_array[i].kol_str = my_array[j].kol_str;
-					my_array[j].kol_str = dp1;
-				}
+				dp = my_array[i].author;
+				my_array[i].author = my_array[j].author;
+				my_array[j].author = dp;
+
+				int dp1 = my_array[i].kol_str;
+				my_array[i].kol_str = my_array[j].kol_str;
+				my_array[j].kol_str = dp1;
 			}
 		}
-		
-	
+	}
+
+
 
 }
 void sort_str(Book* my_array, int size) {
-	
-		for (int i = 0; i < size; i++) {
-			int p = i;
-			while (p > 0 && my_array[p].kol_str > my_array[p - 1].kol_str) {
-				char* dp = my_array[p].name;
-				my_array[p].name = my_array[p - 1].name;
-				my_array[p - 1].name = dp;
 
-				dp = my_array[p].author;
-				my_array[p].author = my_array[p - 1].author;
-				my_array[p - 1].author = dp;
+	for (int i = 0; i < size; i++) {
+		int p = i;
+		while (p > 0 && my_array[p].kol_str > my_array[p - 1].kol_str) {
+			char* dp = my_array[p].name;
+			my_array[p].name = my_array[p - 1].name;
+			my_array[p - 1].name = dp;
 
-				int dp1 = my_array[p].kol_str;
-				my_array[p].kol_str = my_array[p - 1].kol_str;
-				my_array[p - 1].kol_str = dp1;
-				p--;
-			}
+			dp = my_array[p].author;
+			my_array[p].author = my_array[p - 1].author;
+			my_array[p - 1].author = dp;
+
+			int dp1 = my_array[p].kol_str;
+			my_array[p].kol_str = my_array[p - 1].kol_str;
+			my_array[p - 1].kol_str = dp1;
+			p--;
 		}
-	
-	
+	}
+
+
 }
 void free_array(Book* students, int size) {
 	for (int i = 0; i < size; i++) {
